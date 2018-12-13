@@ -24,13 +24,12 @@ def produce_chart_data():
     t = 0;
     while True:
         # Sleep for random duration to prove async working
-        time.sleep(0.1)
+        time.sleep(0.5)
 
         if t > 100:
             t = 0
         else:
             t+=1
-
         # Get some data from source and emit to clients when recieved
         data = get_some_data(t)
 
@@ -43,10 +42,21 @@ def get_some_data(t):
 
     return data
 
+def turn_on_box():
+    while True:
+        time.sleep(2)
+        if True:
+            socketio.emit('box-status-data', 1)
+        else:
+            socketio.emit('box-status-data', 0)
+
 
 if __name__ == '__main__':
     t = threading.Thread(target=produce_chart_data)
     t.start()
+
+    box_thread = threading.Thread(target=turn_on_box)
+    box_thread.start()
 
     PORT = json.load(open('config.json'))["PORT"]
     print("Running on localhost:"+str(PORT))

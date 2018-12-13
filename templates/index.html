@@ -1,11 +1,12 @@
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#fc4513">
-    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--<meta name="theme-color" content="#fc4513">
+    <meta http-equiv="pragma" content="no-cache" />-->
 
     <title>{{ title }}</title>
 
@@ -15,7 +16,9 @@
     <script src="{{ url_for('static', filename='js/socket.io.dev.js') }}"></script>
     <script src="{{ url_for('static', filename='js/moment.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/chartist.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/chartist-legend.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
@@ -23,25 +26,59 @@
 </head>
 
 <body>
-
-    <h1>{{ title }}</h1>
-
-    <div style="width:100%">
-        <div class="column is-3">
-            <strong>CPU Temperature</strong>
-            <br>
-            <small>Temp(C) vs. Time(EST)</small>
-        </div>
-        <div id="data-chart-legend" class="column">
-            <p id="data-chart-legend"></p>
-        </div>
-    </div>
-    <div class="card-content">
-      <canvas id="myChart"></canvas>
+    <div>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Navbar</a>
+    </nav>
     </div>
 
+
+
+
+  </script>
+  <div class="pt-4 container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <canvas id="mem-load1A"></canvas>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <canvas id="mem-load1B"></canvas>
+        </div>
+        <div class="col-md-3">
+          <canvas id="mem-load2A"></canvas>
+        </div>
+        <div class="col-md-3">
+          <canvas id="mem-load2B"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="pt-4 container-fluid">
+      <div class="row">
+        <div class="col-md">
+          <div class="card">
+            <p>Goo</p>
+          </div>
+          </div>
+          <div class="col-md">
+            <div class="card">
+              <div id="viz"></div>
+            </div>
+          </div>
+          <div class="col-md">
+            <p>Goo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/mem-load.js') }}" }></script>
+    <script src="{{ url_for('static', filename='js/box-status.js') }}" }></script>
 </body>
 
-<script src="{{ url_for('static', filename='js/test_chart.js') }}" }></script>
+
 
 </html>
