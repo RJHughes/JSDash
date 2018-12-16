@@ -37,18 +37,19 @@
   </script>
   <div class="pt-4 container-fluid">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md">
         <div class="card">
+          <div class="card-body">
+          <h5 class="card-title">Core 1A Utilisation</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Only a sine wave just now</h6>
           <canvas id="mem-load1A"></canvas>
           </div>
         </div>
-        <div class="col-md-3">
-          <canvas id="mem-load1B"></canvas>
-        </div>
-        <div class="col-md-3">
+      </div>
+        <div class="col-md">
           <canvas id="mem-load2A"></canvas>
         </div>
-        <div class="col-md-3">
+        <div class="col-md">
           <canvas id="mem-load2B"></canvas>
         </div>
       </div>
@@ -60,14 +61,19 @@
             <div class="card-body">
               <h5 class="card-title">Memory</h5>
               <h6 class="card-subtitle mb-2 text-muted"></h6>
-              <p class="card-text">View the current memory load on all cores.</p>
+              <p class="card-text">View the current memory load on all cores</p>
               <a href="#" class="btn btn-primary">Run memory stress test</a>
             </div>
           </div>
         </div>
           <div class="col-md">
             <div class="card">
-              <div id="viz"></div>
+              <div class="card-body">
+                <h5 class="card-title">Box Status</h5>
+                <h6 class="card-subtitle mb-2 text-muted">View which cores are live</h6>
+                <div id="viz"></div>
+                <div id="viz"></div>
+              </div>
             </div>
           </div>
           <div class="col-md">

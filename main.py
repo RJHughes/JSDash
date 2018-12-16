@@ -31,9 +31,11 @@ def produce_chart_data():
         else:
             t+=1
         # Get some data from source and emit to clients when recieved
-        data = get_some_data(t)
+        px1_data = get_some_data(t)
+        px2_data = get_some_data(t+25)
 
-        socketio.emit('new-chart-data', data)
+        socketio.emit('px-1A', px1_data)
+        socketio.emit('px-1B', px2_data)
         print("Emit data")
 
 def get_some_data(t):
