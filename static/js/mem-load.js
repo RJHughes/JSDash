@@ -1,19 +1,16 @@
-var ct1A = document.getElementById('core-util').getContext('2d');
-//var ct1B = document.getElementById('mem-load1B').getContext('2d');
-//var ct2A = document.getElementById('mem-load2A').getContext('2d');
-//var ct2B = document.getElementById('mem-load2B').getContext('2d');
+var ctBar = document.getElementById('mem-util').getContext('2d');
 
-var socket = io.connect('http://localhost:5000');
 
-var data_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-var dara_array2 = data_array.slice(0);
+var databar = [3,4,5,6];
+var databar2 = [1,2,1,1.5];
+
 var params = {
 // The type of chart we want to create
-type: 'line',
+type: 'bar',
 
 // The data for our dataset
 data: {
-    labels: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    labels: ['1A','1B','2A','2B'],
     datasets:
     [
       {
@@ -23,7 +20,7 @@ data: {
         fill: false,
         cubicInterpolationMode: 'monotone',
         lineTension: 0,
-        data: data_array,
+        data: databar,
       },
       {
         label: "1B",
@@ -32,7 +29,7 @@ data: {
         fill: false,
         cubicInterpolationMode: 'monotone',
         lineTension: 0,
-        data: dara_array2,
+        data: databar,
       }
     ]
 },
@@ -46,8 +43,8 @@ options: {
       yAxes: [{
               display: true,
               ticks: {
-                  min: -1,
-                  max: 1
+                  min: 0,
+                  max: 10
               }
           }],
       xAxes: [{
@@ -56,40 +53,10 @@ options: {
         }
 }
 }
-var memload1A = new Chart(ct1A, params);
-//var memload1B = new Chart(ct1A, params);
-//var memload2A = new Chart(ct2A, params);
-//var memload2B = new Chart(ct2B, params);
+var bar = new Chart(ctBar, params);
+
 
 
 socket.on('connect', function () {
     socket.send("USER HAS CONNECTED");
-});
-
-
-// When "new-chart-data" message is recieved, update chart with data
-socket.on('px-1A', function (data) {
-        console.log("Updating chart!");
-
-        //memload1A.data.datasets.forEach((dataset) => {
-          //dataset.data.push(data);
-        //});
-        memload1A.data.datasets[0].data.push(data);
-        memload1A.data.datasets[0].data.shift();
-
-        /*
-        memload1A.data.datasets.forEach((dataset) => {
-          dataset.data.shift();
-        });*/
-        memload1A.update();
-
-});
-
-socket.on('px-1B', function (data) {
-        console.log("Updating chart2!");
-
-        memload1A.data.datasets[1].data.push(data);
-        memload1A.data.datasets[1].data.shift();
-        memload1A.update();
-
 });
