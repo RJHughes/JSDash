@@ -17,7 +17,7 @@ socketio = SocketIO(app)
 
 @app.route("/")
 def index():
-    title = "Example Chart"
+    title = "Px-Dash"
     return render_template("index.html", title=title)
 
 def produce_chart_data():

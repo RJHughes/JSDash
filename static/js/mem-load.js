@@ -18,8 +18,8 @@ data: {
     [
       {
         label: "1A",
-        backgroundColor: 'rgb(191, 48, 14)',
-        borderColor: 'rgb(191, 48, 14)',
+        backgroundColor: '#7F7F7F',
+        borderColor: '#7F7F7F',
         fill: false,
         cubicInterpolationMode: 'monotone',
         lineTension: 0,
@@ -27,8 +27,8 @@ data: {
       },
       {
         label: "1B",
-        backgroundColor: 'rgb(127, 32, 9)',
-        borderColor: 'rgb(127, 32, 9)',
+        backgroundColor: '#B8B8B8',
+        borderColor: '#B8B8B8',
         fill: false,
         cubicInterpolationMode: 'monotone',
         lineTension: 0,

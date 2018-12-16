@@ -5,5 +5,18 @@ h1 {
 }
 
 body {
-  background-color: lightgrey;
+  background-color: #F2F2F2;
+}
+
+h5{
+    color: black;
+}
+
+.btn-primary
+{
+  background-color: #F23B2A;
+
+color:#FFF;
+
+border-color: #2F3E48;
 }
