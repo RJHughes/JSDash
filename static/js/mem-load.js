@@ -1,7 +1,7 @@
-var ct1A = document.getElementById('mem-load1A').getContext('2d');
+var ct1A = document.getElementById('core-util').getContext('2d');
 //var ct1B = document.getElementById('mem-load1B').getContext('2d');
-var ct2A = document.getElementById('mem-load2A').getContext('2d');
-var ct2B = document.getElementById('mem-load2B').getContext('2d');
+//var ct2A = document.getElementById('mem-load2A').getContext('2d');
+//var ct2B = document.getElementById('mem-load2B').getContext('2d');
 
 var socket = io.connect('http://localhost:5000');
 
@@ -18,8 +18,8 @@ data: {
     [
       {
         label: "1A",
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgb(191, 48, 14)',
+        borderColor: 'rgb(191, 48, 14)',
         fill: false,
         cubicInterpolationMode: 'monotone',
         lineTension: 0,
@@ -27,8 +27,8 @@ data: {
       },
       {
         label: "1B",
-        backgroundColor: 'rgb(0, 132, 132)',
-        borderColor: 'rgb(0, 132, 132)',
+        backgroundColor: 'rgb(127, 32, 9)',
+        borderColor: 'rgb(127, 32, 9)',
         fill: false,
         cubicInterpolationMode: 'monotone',
         lineTension: 0,
@@ -49,14 +49,17 @@ options: {
                   min: -1,
                   max: 1
               }
+          }],
+      xAxes: [{
+              display: false,
           }]
         }
 }
 }
 var memload1A = new Chart(ct1A, params);
-var memload1B = new Chart(ct1A, params);
-var memload2A = new Chart(ct2A, params);
-var memload2B = new Chart(ct2B, params);
+//var memload1B = new Chart(ct1A, params);
+//var memload2A = new Chart(ct2A, params);
+//var memload2B = new Chart(ct2B, params);
 
 
 socket.on('connect', function () {

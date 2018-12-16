@@ -26,34 +26,76 @@
 </head>
 
 <body>
-    <div>
+    <!--<div>
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Home</a>
       <a class="navbar-brand" href="#">Link Tests</a>
     </nav>
+  </div>-->
+
+<!-- Row 1 -->
+<div class="pt-4 container-fluid">
+  <div class="row">
+    <div class="col-md">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Uptime</h5>
+        </div>
+      </div>
     </div>
+    <div class="col-md">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Nodes Running</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Avg. Temp</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Power</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Total Memory</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-  </script>
+  <!-- Row 2 -->
   <div class="pt-4 container-fluid">
     <div class="row">
       <div class="col-md">
         <div class="card">
+          <canvas id="core-util"></canvas>
           <div class="card-body">
-          <h5 class="card-title">Core 1A Utilisation</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Only a sine wave just now</h6>
-          <canvas id="mem-load1A"></canvas>
+          <h5 class="card-title">Node Utilisation</h5>
+          <a href="#" class="btn btn-primary">Run Utilisation Stress Test</a>
           </div>
         </div>
-      </div>
-        <div class="col-md">
-          <canvas id="mem-load2A"></canvas>
         </div>
-        <div class="col-md">
-          <canvas id="mem-load2B"></canvas>
-        </div>
+          <div class="col-md">
+            <div class="card">
+              <div class="card-body">
+              </div>
+            </div>
+          </div>
       </div>
     </div>
+
+      <!-- Row 3 -->
     <div class="pt-4 container-fluid">
       <div class="row">
         <div class="col-md">
